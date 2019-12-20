@@ -16,8 +16,6 @@ const Body: FC<BodyProps> = ({
   const repos = useSelector<State, ReposState>(state => state.repos)
   const branches = useSelector<State, BranchesState>(state => state.branches)
 
-  console.log(branches)
-
   useEffect(() => {
     dispatch(getRepos())
   }, [dispatch, app.user])
