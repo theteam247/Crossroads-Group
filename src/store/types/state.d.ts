@@ -1,4 +1,6 @@
 interface AppState {
+  loading: number;
+  refreshing: number;
   user: string;
   repo: string;
   branch: string;

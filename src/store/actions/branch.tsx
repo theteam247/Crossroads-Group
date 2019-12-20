@@ -1,5 +1,6 @@
 import { ThunkAction } from "redux-thunk";
 import { PayloadAction } from "store/types/payload-action";
+import fetch from "utils/fetch";
 
 export const getBranches = (): ThunkAction<
   any,
@@ -9,23 +10,18 @@ export const getBranches = (): ThunkAction<
 > => {
   return async (dispatch, getState) => {
     const { app } = getState();
-    const res = await fetch(
+    const res = await fetch.get<Branch[]>(
       `${process.env.REACT_APP_API}/repos/${app.repo}/branches`
     );
-    if (!res.ok) {
-      return Promise.reject();
-    }
-
-    const data = await res.json();
 
     dispatch({
       type: "branches/save",
       payload: {
-        [app.repo]: data
+        [app.repo]: res.data
       }
     });
 
-    return data;
+    return res.data;
   };
 };
 

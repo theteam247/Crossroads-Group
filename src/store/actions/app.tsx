@@ -12,6 +12,25 @@ export const updateApp = (
   };
 };
 
+export const load = (
+  count: number
+): ThunkAction<any, State, any, PayloadAction<AppState>> => {
+  return async (dispatch, getState) => {
+    setTimeout(() => {
+      const { app } = getState();
+      const loading = app.loading + count;
+
+      dispatch({
+        type: "app/save",
+        payload: {
+          loading: loading > 0 ? loading : 0
+        }
+      });
+    });
+  };
+};
+
 export default {
-  updateApp
+  updateApp,
+  load
 };

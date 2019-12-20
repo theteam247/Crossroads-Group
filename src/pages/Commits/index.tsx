@@ -10,7 +10,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     dispatch(getCommits());
-  }, [dispatch, app.repo, app.branch]);
+  }, [dispatch, app.refreshing, app.repo, app.branch]);
 
   return (
     <ul className="list-group">

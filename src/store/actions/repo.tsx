@@ -1,5 +1,6 @@
 import { ThunkAction } from "redux-thunk";
 import { PayloadAction } from "store/types/payload-action";
+import fetch from "utils/fetch";
 
 export const getRepos = (): ThunkAction<
   Promise<Repo[] | null>,
@@ -9,23 +10,18 @@ export const getRepos = (): ThunkAction<
 > => {
   return async (dispatch, getState) => {
     const { app } = getState();
-    const res = await fetch(
+    const res = await fetch.get<Repo[]>(
       `${process.env.REACT_APP_API}/users/${app.user}/repos`
     );
-    if (!res.ok) {
-      return Promise.reject();
-    }
-
-    const data = await res.json();
 
     dispatch({
       type: "repos/save",
       payload: {
-        [app.user]: data
+        [app.user]: res.data
       }
     });
 
-    return data;
+    return res.data;
   };
 };
 

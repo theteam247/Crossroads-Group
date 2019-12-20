@@ -97,10 +97,12 @@ const Body: FC<BodyProps> = ({ children }) => {
             onClick={() => {
               dispatch(
                 updateApp({
+                  refreshing: Math.random(),
                   user
                 })
               );
             }}
+            disabled={!!app.loading}
           >
             Refresh
           </button>

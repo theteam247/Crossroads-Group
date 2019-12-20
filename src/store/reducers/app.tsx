@@ -3,6 +3,8 @@ import { PayloadAction } from "store/types/payload-action";
 
 const reducer: Reducer<AppState, PayloadAction<AppState>> = (
   state = {
+    loading: 0,
+    refreshing: 0,
     user: "theteam247",
     repo: "theteam247/Crossroads-Group",
     branch: "master"
