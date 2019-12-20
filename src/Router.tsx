@@ -1,5 +1,5 @@
 import React, { FC, Suspense, lazy } from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import App from "containers/App";
 import Body from "containers/Body";
 import Loader from "components/Loader";
@@ -11,7 +11,7 @@ export interface RouterProps {}
 
 const Router: FC<RouterProps> = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Route component={App} />
       <Suspense fallback={<Loader />}>
         <Route
@@ -25,7 +25,7 @@ const Router: FC<RouterProps> = () => {
           )}
         ></Route>
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
