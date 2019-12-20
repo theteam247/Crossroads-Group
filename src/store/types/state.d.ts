@@ -5,7 +5,7 @@ interface AppState {
 }
 
 interface ReposState {
-  [user: string]: Repo[]
+  [user: string]: Repo[];
 }
 
 interface BranchesState {
@@ -19,6 +19,6 @@ interface CommitsState {
 interface State {
   app: AppState;
   repos: ReposState;
-  branches: BranchesState
-  commits: CommitsState
+  branches: BranchesState;
+  commits: CommitsState;
 }

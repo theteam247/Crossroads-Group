@@ -1,11 +1,14 @@
 import { Reducer } from "redux";
 import { PayloadAction } from "store/types/payload-action";
 
-const reducer: Reducer<AppState, PayloadAction<AppState>> = (state = {
-  user: "theteam247",
-  repo: "theteam247/Crossroads-Group",
-  branch: "master"
-}, action) => {
+const reducer: Reducer<AppState, PayloadAction<AppState>> = (
+  state = {
+    user: "theteam247",
+    repo: "theteam247/Crossroads-Group",
+    branch: "master"
+  },
+  action
+) => {
   switch (action.type) {
     case "app/save":
       return {
@@ -13,8 +16,8 @@ const reducer: Reducer<AppState, PayloadAction<AppState>> = (state = {
         ...action.payload
       };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

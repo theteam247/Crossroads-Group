@@ -1,7 +1,10 @@
 import { Reducer } from "redux";
 import { PayloadAction } from "store/types/payload-action";
 
-const reducer: Reducer<ReposState, PayloadAction<ReposState>> = (state = {}, action) => {
+const reducer: Reducer<ReposState, PayloadAction<ReposState>> = (
+  state = {},
+  action
+) => {
   switch (action.type) {
     case "repos/save":
       return {
@@ -9,8 +12,8 @@ const reducer: Reducer<ReposState, PayloadAction<ReposState>> = (state = {}, act
         ...action.payload
       } as ReposState;
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

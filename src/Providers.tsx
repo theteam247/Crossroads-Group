@@ -7,11 +7,7 @@ export interface ProvidersProps {}
 export const Providers: React.FC<PropsWithChildren<ProvidersProps>> = ({
   children
 }) => {
-  return (
-    <Provider store={store}>
-      {children}
-    </Provider>
-  );
+  return <Provider store={store}>{children}</Provider>;
 };
 
 export default Providers;

@@ -32,7 +32,7 @@ interface CommitResource extends GithubResource {
   message: string;
   tree: Tree;
   comment_count: number;
-  verification: Verification
+  verification: Verification;
 }
 
 interface Account extends GithubNode {
@@ -50,7 +50,7 @@ interface Account extends GithubNode {
   events_url: string;
   received_events_url: string;
   type: string;
-  site_admin: boolean
+  site_admin: boolean;
 }
 
 interface Repo extends GithubTree, GithubNode {
