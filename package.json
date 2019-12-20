@@ -1,7 +1,8 @@
 {
   "name": "crossroads-group",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://theteam247.github.io/Crossroads-Group/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -9,7 +10,9 @@
     "eject": "react-scripts eject",
     "lint-staged": "lint-staged",
     "tslint": "tslint --fix --project .",
-    "prettier": "prettier --write ./**/*.{js,jsx,ts,tsx,json,css,scss,md}"
+    "prettier": "prettier --write ./**/*.{js,jsx,ts,tsx,json,css,scss,md}",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "husky": {
     "hooks": {
@@ -62,6 +65,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
