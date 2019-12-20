@@ -1,11 +1,11 @@
 import React, { FC, Suspense, lazy } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import App from "containers/App";
 import Body from "containers/Body";
 import Loader from "components/Loader";
 
 // pages
-const Home = lazy(() => import("pages/Home"));
+const Commits = lazy(() => import("pages/Commits"));
 
 export interface RouterProps {}
 
@@ -18,8 +18,8 @@ const Router: FC<RouterProps> = () => {
           render={props => (
             <Body {...props}>
               <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="*" component={Home} />
+                <Route exact path="/commits" component={Commits} />
+                <Redirect to="/commits" />
               </Switch>
             </Body>
           )}
