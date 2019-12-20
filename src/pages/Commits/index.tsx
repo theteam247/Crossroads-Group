@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCommits } from 'store/actions/commits';
+import { getCommits } from 'store/actions/commit';
 
 const Home: React.FC = () => {
 
@@ -11,9 +11,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     dispatch(getCommits())
-  }, [dispatch, app.repo])
-
-  console.log(commits)
+  }, [dispatch, app.repo, app.branch])
 
   return (
     <div>

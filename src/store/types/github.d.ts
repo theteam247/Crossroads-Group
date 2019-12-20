@@ -60,6 +60,10 @@ interface Repo extends GithubTree, GithubNode {
   owner: Account;
 }
 
+interface Branch {
+  name: string;
+}
+
 interface Commit extends GithubTree, GithubNode {
   commit: CommitResource;
   comments_url: string;
