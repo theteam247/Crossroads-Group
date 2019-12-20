@@ -12,6 +12,10 @@ export const fetch = axios.create({
 
 fetch.interceptors.request.use(config => {
   store.dispatch(load(1) as any);
+  config.params = {
+    t: Date.now(),
+    ...config.params
+  };
   return config;
 });
 
