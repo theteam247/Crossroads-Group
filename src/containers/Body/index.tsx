@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getRepos } from "store/actions/repo";
 import { updateApp } from "store/actions/app";
@@ -16,22 +16,34 @@ const Body: FC<BodyProps> = ({
   const repos = useSelector<State, ReposState>(state => state.repos)
   const branches = useSelector<State, BranchesState>(state => state.branches)
 
-  useEffect(() => {
-    dispatch(getRepos())
-  }, [dispatch, app.user])
+  const [user, setUser] = useState(app.user)
 
   useEffect(() => {
-    dispatch(getBranches())
-  }, [dispatch, app.repo])
+    (async () => {
+      const repos: Repo[] = await dispatch(getRepos()) as any
+      if(repos.length && !repos.find(repo => repo.full_name === app.repo)) {
+        dispatch(updateApp({
+          repo: repos[0].full_name
+        }))
+      }
+    })()
+  }, [dispatch, app.user, app.repo])
+
+  useEffect(() => {
+    (async () => {
+      const branches: Branch[] = await dispatch(getBranches()) as any
+      if(branches.length && !branches.find(branch => branch.name === app.branch)) {
+        dispatch(updateApp({
+          branch: branches[0].name
+        }))
+      }
+    })()
+  }, [dispatch, app.repo, app.branch])
 
   return (
     <main className="container">
       <div className="input-group my-3">
-        <input type="text" className="form-control" placeholder="User" value={app.user} onChange={event => {
-          dispatch(updateApp({
-            user: event.target.value
-          }))
-        }} />
+        <input type="text" className="form-control" placeholder="User" value={user} onChange={event => setUser(event.target.value)} />
         <select className="form-control" placeholder="Repo" value={app.repo} onChange={event => {
           dispatch(updateApp({
             repo: event.target.value
@@ -51,7 +63,11 @@ const Body: FC<BodyProps> = ({
           ))}
         </select>
         <div className="input-group-append">
-          <button className="btn btn-primary" type="button">Refresh</button>
+          <button className="btn btn-primary" type="button" onClick={() => {
+            dispatch(updateApp({
+              user
+            }))
+          }}>Refresh</button>
         </div>
       </div>
       {children}

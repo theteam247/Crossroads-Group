@@ -67,6 +67,6 @@ interface Branch {
 interface Commit extends GithubTree, GithubNode {
   commit: CommitResource;
   comments_url: string;
-  author: Account;
-  committer: Account;
+  author?: Account;
+  committer?: Account;
 }

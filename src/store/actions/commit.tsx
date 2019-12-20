@@ -5,6 +5,10 @@ export const getCommits = (): ThunkAction<any, State, any, PayloadAction<Commits
   return async (dispatch, getState) => {
     const { app } = getState()
     const res = await fetch(`${process.env.REACT_APP_API}/repos/${app.repo}/commits?sha=${app.branch}`)
+    if(!res.ok) {
+      return Promise.reject();
+    }
+    
     const data = await res.json()
 
     dispatch({
@@ -13,6 +17,8 @@ export const getCommits = (): ThunkAction<any, State, any, PayloadAction<Commits
         [app.repo]: data
       }
     })
+
+    return data;
   }
 }
 

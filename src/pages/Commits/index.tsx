@@ -25,8 +25,8 @@ const Home: React.FC = () => {
                 </a>
               </h5>
               <div className="d-flex align-items-center">
-                <a href={commit.author.html_url} target="_blank" rel="noopener noreferrer">
-                  <img src={commit.author.avatar_url} alt={commit.author.displayName} width={20} className="rounded" />
+                <a href={commit.author?.html_url} target="_blank" rel="noopener noreferrer">
+                  <img src={commit.author?.avatar_url} alt={commit.author?.displayName} width={20} className="rounded" />
                 </a>
                 <span className="font-weight-normal mx-2">{commit.commit.author.name}</span>
                 <span className="font-weight-light">{new Date(commit.commit.author.date).toLocaleString()}</span>
