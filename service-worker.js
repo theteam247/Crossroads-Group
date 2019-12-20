@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Crossroads-Group/precache-manifest.b556102b0da29837fed91b4311483f35.js"
+  "/Crossroads-Group/precache-manifest.0303b2ca51ffe95298920a2cc27818e6.js"
 );
 
 self.addEventListener('message', (event) => {

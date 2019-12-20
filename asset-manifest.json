@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/Crossroads-Group/static/css/main.b15a5ea6.chunk.css",
-    "main.js": "/Crossroads-Group/static/js/main.3c2d8db3.chunk.js",
-    "main.js.map": "/Crossroads-Group/static/js/main.3c2d8db3.chunk.js.map",
-    "runtime-main.js": "/Crossroads-Group/static/js/runtime-main.614ab643.js",
-    "runtime-main.js.map": "/Crossroads-Group/static/js/runtime-main.614ab643.js.map",
+    "main.js": "/Crossroads-Group/static/js/main.2b894f9a.chunk.js",
+    "main.js.map": "/Crossroads-Group/static/js/main.2b894f9a.chunk.js.map",
+    "runtime-main.js": "/Crossroads-Group/static/js/runtime-main.29950a96.js",
+    "runtime-main.js.map": "/Crossroads-Group/static/js/runtime-main.29950a96.js.map",
     "static/css/2.64a99b10.chunk.css": "/Crossroads-Group/static/css/2.64a99b10.chunk.css",
-    "static/js/2.eb35ce5f.chunk.js": "/Crossroads-Group/static/js/2.eb35ce5f.chunk.js",
-    "static/js/2.eb35ce5f.chunk.js.map": "/Crossroads-Group/static/js/2.eb35ce5f.chunk.js.map",
-    "static/js/3.df0a59df.chunk.js": "/Crossroads-Group/static/js/3.df0a59df.chunk.js",
-    "static/js/3.df0a59df.chunk.js.map": "/Crossroads-Group/static/js/3.df0a59df.chunk.js.map",
+    "static/js/2.1ff7dc66.chunk.js": "/Crossroads-Group/static/js/2.1ff7dc66.chunk.js",
+    "static/js/2.1ff7dc66.chunk.js.map": "/Crossroads-Group/static/js/2.1ff7dc66.chunk.js.map",
+    "static/js/3.20145bf4.chunk.js": "/Crossroads-Group/static/js/3.20145bf4.chunk.js",
+    "static/js/3.20145bf4.chunk.js.map": "/Crossroads-Group/static/js/3.20145bf4.chunk.js.map",
     "index.html": "/Crossroads-Group/index.html",
-    "precache-manifest.b556102b0da29837fed91b4311483f35.js": "/Crossroads-Group/precache-manifest.b556102b0da29837fed91b4311483f35.js",
+    "precache-manifest.0303b2ca51ffe95298920a2cc27818e6.js": "/Crossroads-Group/precache-manifest.0303b2ca51ffe95298920a2cc27818e6.js",
     "service-worker.js": "/Crossroads-Group/service-worker.js",
     "static/css/2.64a99b10.chunk.css.map": "/Crossroads-Group/static/css/2.64a99b10.chunk.css.map",
     "static/css/main.b15a5ea6.chunk.css.map": "/Crossroads-Group/static/css/main.b15a5ea6.chunk.css.map",
-    "static/js/2.eb35ce5f.chunk.js.LICENSE": "/Crossroads-Group/static/js/2.eb35ce5f.chunk.js.LICENSE"
+    "static/js/2.1ff7dc66.chunk.js.LICENSE": "/Crossroads-Group/static/js/2.1ff7dc66.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.614ab643.js",
+    "static/js/runtime-main.29950a96.js",
     "static/css/2.64a99b10.chunk.css",
-    "static/js/2.eb35ce5f.chunk.js",
+    "static/js/2.1ff7dc66.chunk.js",
     "static/css/main.b15a5ea6.chunk.css",
-    "static/js/main.3c2d8db3.chunk.js"
+    "static/js/main.2b894f9a.chunk.js"
   ]
 }
